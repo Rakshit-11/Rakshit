@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Rakshit Shetty</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#F7F7FB;--ink:#16112B;--muted:#5E5A72;--rule:#D9D6E6;
+--display:"Bricolage Grotesque","Helvetica Neue",Arial,sans-serif;--body:"Instrument Sans","Helvetica Neue",Arial,sans-serif;
+color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--paper:#120E24;--ink:#F1EEFF;--muted:#A9A4C4;--rule:#2B2545;color-scheme:dark}}
+:root[data-theme="dark"]{--paper:#120E24;--ink:#F1EEFF;--muted:#A9A4C4;--rule:#2B2545;color-scheme:dark}
+html{scroll-padding-top:4.5rem}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:1.0625rem;line-height:1.65;-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--paper);z-index:21}
+a{color:inherit;text-underline-offset:.2em}
+img{max-width:100%;height:auto;display:block}
+:focus-visible{outline:3px solid currentColor;outline-offset:3px;border-radius:3px}
+button{font:inherit;cursor:pointer}
+.wrap{max-width:78rem;margin:0 auto;padding:0 clamp(1.2rem,5vw,3rem)}
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--paper);border-bottom:1px solid var(--rule)}
+.top .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:.4rem 1.5rem;padding-top:.8rem;padding-bottom:.8rem}
+.brand{font-family:var(--display);font-weight:800;font-size:1.15rem;text-decoration:none}
+.top nav{display:flex;flex-wrap:wrap;gap:.2rem clamp(.9rem,2.5vw,1.8rem);font-weight:500;font-size:.98rem}
+.top nav a{text-decoration:none;padding:.15rem 0;border-bottom:2px solid transparent}
+.top nav a:hover,.top nav a[aria-current="page"]{border-bottom-color:currentColor}
+.view{display:none;padding:clamp(2.5rem,7vw,5.5rem) 0 clamp(3rem,8vw,6rem)}
+.view.on{display:block}
+h1,h2,h3{font-family:var(--display);letter-spacing:-.03em;margin:0}
+.big{font-weight:800;font-size:clamp(2.5rem,8.2vw,6.4rem);line-height:.98;letter-spacing:-.045em;max-width:15em}
+.sub{font-size:clamp(1.15rem,2.2vw,1.55rem);line-height:1.45;font-weight:500;max-width:48rem;margin:clamp(1.5rem,4vw,2.5rem) 0 0}
+.muted{color:var(--muted)}
+.row-links{display:flex;flex-wrap:wrap;gap:.6rem 1.8rem;margin-top:2.2rem;font-weight:600}
+.page-h{font-weight:800;font-size:clamp(2.4rem,7vw,5rem);line-height:.95;margin-bottom:clamp(1.8rem,4vw,3rem)}
+.prose p{max-width:48rem;margin:0 0 1.15rem;font-size:1.1rem}
+.item{padding:1.5rem 0;border-top:1px solid var(--rule);max-width:56rem}
+.item:last-of-type{border-bottom:1px solid var(--rule)}
+.item h3{font-weight:600;font-size:clamp(1.3rem,2.4vw,1.7rem);line-height:1.15;margin-bottom:.35rem}
+.item h3 a{text-decoration:none}
+.item h3 a:hover{text-decoration:underline;text-decoration-color:var(--rule);text-underline-offset:4px}
+.item p{margin:0;color:var(--muted)}
+.tag{font-weight:600;color:var(--ink)}
+
+.proj{background:var(--bg);color:var(--fg);border-radius:22px;padding:clamp(1.3rem,4vw,3rem);margin-bottom:1.5rem}
+.p1{--bg:#FF8FB8;--fg:#2A0B1B;--demo:#FFF0F6;--demo-ink:#2A0B1B;--acc:#C2185B;--soft:#F2C6D8}
+.p2{--bg:#0F4C3A;--fg:#EAF7F0;--demo:#EAF7F0;--demo-ink:#0F2B22;--acc:#0F4C3A;--soft:#A8BDB3}
+.p3{--bg:#4B3BFF;--fg:#F4F2FF;--demo:#ECEAFF;--demo-ink:#17124D;--acc:#4B3BFF;--soft:#C9C4FF}
+.proj h2{font-weight:800;font-size:clamp(2.6rem,8vw,6rem);line-height:.9;letter-spacing:-.05em}
+.when{margin:.5rem 0 1.5rem;font-weight:500;opacity:.85}
+.cols{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:clamp(2rem,6vw,5rem);align-items:start}
+@media (max-width:50rem){.cols{grid-template-columns:1fr;gap:2rem}}
+.proj h3{font-weight:600;font-size:clamp(1.25rem,2.2vw,1.65rem);line-height:1.15;margin-bottom:.8rem}
+.proj p{margin:0 0 .8rem}
+.proj ul{margin:0;padding-left:1.1rem}.proj li{margin:.45rem 0}
+.demo{background:var(--demo);color:var(--demo-ink);border-radius:16px;padding:clamp(.9rem,2.5vw,1.4rem);display:flex;flex-direction:column;gap:.8rem;min-height:19rem;justify-content:center;align-items:center;}
+.hint{margin:0!important;font-size:.92rem;opacity:.85}
+.small{align-self:flex-start;background:transparent;color:inherit;border:1.5px solid currentColor;border-radius:999px;padding:.28rem .85rem;font-size:.92rem}
+
+.mail{display:block;font-family:var(--display);font-weight:800;font-size:clamp(1.5rem,6.6vw,4.6rem);letter-spacing:-.045em;line-height:1.05;text-decoration:none;word-break:break-word}
+.mail:hover{text-decoration:underline;text-decoration-thickness:3px}
+footer{border-top:1px solid var(--rule);padding:1.3rem 0 2.5rem;color:var(--muted);font-size:.93rem}
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <a class="brand" href="#home">Rakshit Shetty</a>
+  <nav aria-label="Main">
+    <a href="#about">Details</a><a href="#work">Work</a><a href="#side-projects">Side projects</a><a href="#contact">Contact</a>
+  </nav>
+</div></header>
+
+<div class="wrap">
+<main>
+
+<section class="view" id="v-home" data-title="Rakshit Shetty">
+  <h1 class="page-h" style="margin-bottom:1rem">About me</h1>
+  <div class="prose" style="margin-top:clamp(2rem,5vw,3.5rem)">
+    <p>I’m Rakshit, a product enthusiast with a Computer Science background. What pulls me in is building products that solve real problems.</p>
+    <p>My road into product management started with building things. I made my own products, then worked on features at Predis.ai, and what I enjoyed most was working out why users do what they do, finding where they get stuck, and changing the product based on what I learned.</p>
+    <p>At Predis.ai I did user research, worked on the Reference Image feature from start to finish, studied how people used the product and tested changes. One test, a nudge inside the product, brought more users back: retention was 23% higher than in the group that didn’t see it.</p>
+    <p>Outside work I built TryApprove and BlurTab, which taught me what it takes to get an idea to launch, find users and learn from what they say. TryApprove has 100+ users and has brought in $235 in revenue. BlurTab has 50+ users, all from organic channels. Both are on the <a href="#side-projects">side projects</a> page.</p>
+    <p>I’m doing my PGDM at Welingkar in Mumbai to understand the business side of technology better.</p>
+    <p>I like connecting what users need, what the business wants and what the technology can do, and then making a call. The areas I find most interesting are SaaS, AI products and consumer tech.</p>
+    <p>I think the hard part of product work is deciding what is worth building, more than building it.</p>
+  </div>
+  <div class="row-links"><a href="#work">See the work</a><a href="#side-projects">Things I’ve built</a><a href="#about">Details</a><a href="#contact">Get in touch</a></div>
+</section>
+
+<section class="view prose" id="v-about" data-title="About, Rakshit Shetty">
+  <h1 class="page-h">Details</h1>
+  <div class="item"><h3>Education</h3><p>PGDM (MBA), Welingkar Institute of Management and Research, 2026 to 2028<br>BSc Computer Science, S.I.W.S College of Arts, Science and Commerce, 2022 to 2025<br>HSC, S.I.E.S College of Arts, Science and Commerce, 2021 to 2022</p></div>
+  <div class="item"><h3>Recognition</h3><p>Finalist, Product Paradox, a national product case competition at NSUT Delhi<br>Finalist, Maharashtra state startup competition run by MSInS<br>Management Committee member, WeSchool, contributing to student initiatives and activities<br>Department representative and basketball runner-up in college</p></div>
+  <div class="item"><h3>Skills</h3><p>Product: discovery, user research, problem definition, PRD writing, user stories, prioritisation, roadmapping, competitive analysis, product strategy, Agile<br>Analytics: SQL, funnel, retention and conversion analysis, KPI tracking, A/B testing, Mixpanel, Google Analytics, Microsoft Clarity, Excel<br>Design and tools: Figma, Lovable, wireframing, prototyping, Jira, Notion, Trello</p></div>
+</section>
+
+<section class="view" id="v-work" data-title="Work, Rakshit Shetty">
+  <h1 class="page-h">Work</h1>
+
+  <article class="proj p1">
+    <h2>Predis.ai</h2>
+    <p class="when">Product Management Intern, Nov 2025 to May 2026</p>
+    <div class="cols">
+      <div>
+        <h3>Identified where new users dropped off, then tested the fix</h3>
+        <p>Predis.ai uses AI to generate social media content. My focus was on improving the new-user experience and bringing features from idea to launch.</p>
+        <ul>
+          <li>I led the discovery and launch of the Reference Image feature, letting users recreate ads using Predis.ai’s catalog or their own uploads.</li>
+          <li>I talked with users to understand what they needed, mapped out the steps they'd take, and worked closely with design and engineering to bring the feature to life.</li>
+          <li>By digging into Mixpanel and SQL data, I found exactly where new users were dropping off and identified clear ways to make the experience smoother.</li>
+          <li>I designed and tested a subtle nudge inside the app to encourage users to stick around. The group that saw it had a 23% higher retention rate.</li>
+          <li>I also kept an eye on what competitors were doing, sketched out early wireframes, and relied on real user feedback to keep making the product better.</li>
+        </ul>
+      </div>
+      <div class="demo" style="padding:0; overflow:hidden; display:block;">
+        <img src="predis-screenshot.jpg" alt="Predis.ai interface screenshot" style="width: 100%; border-radius: 16px; border: 1px solid rgba(0,0,0,0.05); object-fit: cover;">
+      </div>
+    </div>
+  </article>
+
+  <p class="muted" style="margin-top:2rem">What I’ve built on my own is under <a href="#side-projects">side projects</a>.</p>
+</section>
+
+<section class="view" id="v-side-projects" data-title="Side projects, Rakshit Shetty">
+  <h1 class="page-h">Side projects</h1>
+  <p class="sub" style="margin-top:0;margin-bottom:2rem">Two of these have real users, and one has paying customers.</p>
+
+  <article class="proj p2">
+    <h2>TryApprove</h2>
+    <p class="when">A client approval and feedback portal, built and run by me, ongoing</p>
+    <div class="cols">
+      <div>
+        <h3>One portal for client approvals, feedback and invoices</h3>
+        <p>Agencies and freelancers spend a lot of effort getting approvals and feedback out of clients. TryApprove keeps all of it in one portal under the agency’s own branding, from onboarding to the final invoice.</p>
+        <ul>
+          <li>I started by talking to agency owners and freelancers about how approvals work for them today.</li>
+          <li>Search traffic, Instagram and cold outreach brought in 100+ users, and their feedback went straight back into the product.</li>
+          <li>Some of those early users paid: $235 in revenue so far, and $78 a month in recurring revenue at the first version.</li>
+        </ul>
+      </div>
+      <div class="demo">
+        <h4 style="margin: 0 0 1rem; color: var(--demo-ink); font-family: var(--display); font-size: 1.25rem;">Live website</h4>
+        <a href="https://tryapprove.com" target="_blank" style="display:inline-block; padding:0.7rem 1.5rem; background:var(--acc); color:#fff; border-radius:999px; text-decoration:none; font-weight:600; font-size:1rem;">Visit tryapprove.com &nearr;</a>
+      </div>
+    </div>
+  </article>
+
+  <article class="proj p3">
+    <h2>BlurTab</h2>
+    <p class="when">Privacy browser extension</p>
+    <div class="cols">
+      <div>
+        <h3>Hiding sensitive details while you share your screen</h3>
+        <p>Screen sharing has a habit of showing things you never meant to show. I spotted the problem during a share, so I built a browser extension that hides sensitive information on the screen.</p>
+        <ul>
+          <li>I launched it through organic channels only and got 50+ users, which was enough to tell me the problem was real.</li>
+          <li>Feedback from those users pointed at usability gaps, and I fixed them over several rounds.</li>
+        </ul>
+      </div>
+      <div class="demo">
+        <h4 style="margin: 0 0 1rem; color: var(--demo-ink); font-family: var(--display); font-size: 1.25rem;">Live website</h4>
+        <a href="https://blurtab.com" target="_blank" style="display:inline-block; padding:0.7rem 1.5rem; background:var(--acc); color:#fff; border-radius:999px; text-decoration:none; font-weight:600; font-size:1rem;">Visit blurtab.com &nearr;</a>
+      </div>
+    </div>
+  </article>
+</section>
+
+<section class="view" id="v-contact" data-title="Contact, Rakshit Shetty">
+  <h1 class="page-h">Get in touch.</h1>
+  <p class="sub" style="margin-top:0;margin-bottom:1.5rem">If you’re hiring a summer product intern, I’d like to hear about the team.</p>
+  <a class="mail" href="mailto:rakshitshetty59@gmail.com">rakshitshetty59@gmail.com</a>
+  <div class="row-links">
+    <a href="resume.pdf" download>Download Resume</a>
+    <a href="https://www.linkedin.com/in/rakshit-shetty13/" target="_blank">LinkedIn</a>
+    <a href="https://x.com/rakshit08669252" target="_blank">X (Twitter)</a>
+    <a href="https://github.com/your-handle" target="_blank">GitHub</a>
+  </div>
+</section>
+
+</main>
+</div>
+<footer><div class="wrap">Rakshit Shetty, Mumbai</div></footer>
+
+<script>
+(function(){
+  var views=[].slice.call(document.querySelectorAll('.view')),links=[].slice.call(document.querySelectorAll('.top nav a'));
+  function show(){
+    var h=(location.hash||'#home').slice(1),el=document.getElementById('v-'+h);
+    if(!el){h='home';el=document.getElementById('v-home');}
+    views.forEach(function(v){v.classList.toggle('on',v===el);});
+    links.forEach(function(a){if(a.getAttribute('href')==='#'+h)a.setAttribute('aria-current','page');else a.removeAttribute('aria-current');});
+    document.title=el.getAttribute('data-title');window.scrollTo(0,0);
+  }
+  window.addEventListener('hashchange',show);show();
+})();
+</script>
+</body>
+</html>
